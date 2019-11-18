@@ -1,0 +1,15 @@
+{
+  "name": "ood_lecture",
+  "version": "1.0.0",
+  "description": "Sources for OOD lecture",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "start": "tsc --outDir build -t ES5 index.ts && node build/index.js"
+  },
+  "author": "Maksym Fedenko",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.7.2"
+  }
+}
