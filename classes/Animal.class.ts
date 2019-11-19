@@ -1,10 +1,11 @@
 export abstract class Animal {
   private kind: string;
+
   protected nickname: string;
+
   private pawsAmount: number;
 
   set paws(amount: number) {
-    if (amount < 0) throw new Error('Animal should have at least one paw!');
     this.pawsAmount = amount;
   }
 
@@ -16,7 +17,7 @@ export abstract class Animal {
     return `${this.kind} ${this.nickname}`;
   }
 
-  constructor(kind: string, nickname: string, paws: number = 4) {
+  constructor(kind: string, nickname: string, paws = 4) {
     this.kind = kind;
     this.nickname = nickname;
     this.paws = paws;
@@ -29,6 +30,6 @@ export abstract class Animal {
   abstract speak(): void;
 
   sleep(): void {
-    console.log('Zzzzzzzz......');
-  };
+    console.log(this.nickname, 'Zzzzzzzz......');
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+  },
+  "exclude": [
+    "node_modules"
+  ],
+}

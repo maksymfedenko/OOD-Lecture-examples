@@ -5,11 +5,39 @@
   "main": "index.ts",
   "private": true,
   "scripts": {
-    "start": "tsc --outDir build -t ES5 index.ts && node build/index.js"
+    "start": "tsc -p . && node build/index.js",
+    "lint": "eslint './**/*.{ts,tsx}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{ts,js}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">= 12.12.0",
+    "npm": ">= 6.11.0"
   },
   "author": "Maksym Fedenko",
   "license": "MIT",
   "dependencies": {
     "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1"
   }
 }
