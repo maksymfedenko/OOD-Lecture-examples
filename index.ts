@@ -46,7 +46,7 @@ const animals: Animal[] = [
   new Turtle('Tamara'),
 ];
 
-function filterOnlyTurtles(animals: Animal[]): Turtle[] {
+function filterOnlyTurtles(animalList: Animal[]): Turtle[] {
   return animals.filter((animal) => animal instanceof Turtle) as Turtle[];
 }
 
