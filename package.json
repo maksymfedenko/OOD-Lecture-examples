@@ -5,7 +5,7 @@
   "main": "index.ts",
   "private": true,
   "scripts": {
-    "start": "tsc -p . && node build/index.js",
+    "start": "tsc -t 'ES5' --outDir ./build ./index.ts && node ./build/index.js",
     "lint": "eslint './**/*.{ts,tsx}'"
   },
   "husky": {
