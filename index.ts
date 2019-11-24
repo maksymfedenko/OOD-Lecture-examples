@@ -4,6 +4,10 @@ import { Moveable } from './interfaces/Moveable.interface';
 import { Pillar } from './classes/Pillar.class';
 import { Animal } from './classes/Animal.class';
 
+import { Square } from './figures/classes/Square.class';
+import { Rectangle } from './figures/classes/Rectangle.class';
+import { Parallelogram } from './figures/classes/Parallelogram.class';
+
 const archieDog = new Dog('Archie');
 const donatelloTurtle = new Turtle('Donatello');
 
@@ -59,3 +63,56 @@ turtles.forEach(addPawToAnimal);
 
 console.warn('filterOnlyTurtles result');
 console.dir(filterOnlyTurtles(animals));
+
+//
+// IRA
+//
+
+const rectangle = new Rectangle(30, 20);
+console.group('Rectangle');
+
+console.log(rectangle.position);
+rectangle.coordinateY = 3;
+rectangle.coordinateX = 3;
+console.log(rectangle.position);
+
+rectangle.horisontalMovement(-2);
+rectangle.verticalMovement(2);
+console.log(rectangle.position);
+
+console.group(rectangle.getSize());
+rectangle.transform();
+console.log(rectangle.getSize());
+console.groupEnd();
+
+console.groupEnd();
+
+const parallelogram = new Parallelogram(30, 50, 45);
+console.group('Parallelogram');
+
+console.log(parallelogram.position);
+parallelogram.horisontalMovement(-1);
+console.log(parallelogram.position);
+
+console.group(parallelogram.getSize());
+parallelogram.angleDegrees = 30;
+console.group(parallelogram.getSize());
+
+parallelogram.transform();
+console.log(parallelogram.getSize());
+console.groupEnd();
+
+console.groupEnd();
+
+const square = new Square(20, 'blue');
+console.group('Square');
+
+console.log(square.position);
+console.log(square.getSize());
+
+console.group(square.getColor());
+square.filling = 'lightblue';
+console.log(square.getColor());
+console.groupEnd();
+
+console.groupEnd();
