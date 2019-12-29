@@ -8,6 +8,10 @@ import { Square } from './figures/classes/Square.class';
 import { Rectangle } from './figures/classes/Rectangle.class';
 import { Parallelogram } from './figures/classes/Parallelogram.class';
 
+import { RadioQuestion } from './quiz/classes/RadioQuestion.class';
+import { ConsolePrinter } from './quiz/classes/ConsolePrinter.class';
+import { TextQuestion } from './quiz/classes/TextQuestion.class';
+
 const archieDog = new Dog('Archie');
 const donatelloTurtle = new Turtle('Donatello');
 
@@ -115,4 +119,23 @@ square.filling = 'lightblue';
 console.log(square.getColor());
 console.groupEnd();
 
+console.groupEnd();
+
+const radio = new RadioQuestion(
+  new ConsolePrinter(),
+  ['answ1', 'answ2', 'answ3', 'answ4'],
+  'What?',
+  "I don't know",
+);
+console.group('Radio');
+
+console.log(radio.optionsCount());
+console.log(radio.print());
+console.groupEnd();
+
+const text = new TextQuestion(new ConsolePrinter(), 10, 'What?', 'Nothing');
+console.group('Text');
+
+console.log(text.validation());
+console.log(text.print());
 console.groupEnd();

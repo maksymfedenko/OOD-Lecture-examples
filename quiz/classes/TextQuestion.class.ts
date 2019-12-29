@@ -1,8 +1,7 @@
 import { Question } from './Question.class';
 import { Printer } from '../interfaces/Printer.interface';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-class TextQuestion extends Question {
+export class TextQuestion extends Question {
   maxLength: number;
 
   constructor(private printer: Printer, maxLength, question, answer) {
@@ -11,12 +10,14 @@ class TextQuestion extends Question {
   }
 
   validation() {
-    if (this.maxLength <= 16) {
-      this.print();
-    }
+    return this.answer > this.maxLength;
   }
 
   print(): void {
-    this.printer.print(`${this.question}: ${this.answer}`);
+    this.printer.print(
+      `${this.question}: ${this.answer}\nisValid ${
+        this.validation() ? 'true' : 'false'
+      }`,
+    );
   }
 }
