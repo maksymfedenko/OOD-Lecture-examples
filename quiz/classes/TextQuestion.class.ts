@@ -10,7 +10,7 @@ export class TextQuestion extends Question {
   }
 
   validation() {
-    return this.answer > this.maxLength;
+    return this.answer.length > this.maxLength;
   }
 
   print(): void {

@@ -11,6 +11,7 @@ import { Parallelogram } from './figures/classes/Parallelogram.class';
 import { RadioQuestion } from './quiz/classes/RadioQuestion.class';
 import { ConsolePrinter } from './quiz/classes/ConsolePrinter.class';
 import { TextQuestion } from './quiz/classes/TextQuestion.class';
+import { AlertPrinter } from './quiz/classes/AlertPrinter.class';
 
 const archieDog = new Dog('Archie');
 const donatelloTurtle = new Turtle('Donatello');
@@ -121,21 +122,42 @@ console.groupEnd();
 
 console.groupEnd();
 
-const radio = new RadioQuestion(
+const consoleRadio = new RadioQuestion(
   new ConsolePrinter(),
   ['answ1', 'answ2', 'answ3', 'answ4'],
   'What?',
   "I don't know",
 );
+const alertRadio = new RadioQuestion(
+  new AlertPrinter(),
+  ['answ5', 'answ6', 'answ7', 'answ8'],
+  'What?',
+  "I don't know",
+);
 console.group('Radio');
 
-console.log(radio.optionsCount());
-console.log(radio.print());
+console.log(consoleRadio.optionsCount());
+consoleRadio.print();
+alertRadio.print();
 console.groupEnd();
 
-const text = new TextQuestion(new ConsolePrinter(), 10, 'What?', 'Nothing');
+const consoleText = new TextQuestion(
+  new ConsolePrinter(),
+  10,
+  'What?',
+  'Nothing',
+);
+
+const alertText = new TextQuestion(
+  new ConsolePrinter(),
+  20,
+  'What?',
+  'Nothing',
+);
+
 console.group('Text');
 
-console.log(text.validation());
-console.log(text.print());
+console.log(consoleText.validation());
+consoleText.print();
+alertText.print();
 console.groupEnd();
